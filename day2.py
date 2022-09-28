@@ -2,15 +2,36 @@ input = [1,12,2,3,1,1,2,3,1,3,4,3,1,5,0,3,2,6,1,19,2,19,9,23,1,23,5,27,2,6,27,31
 
 # input = [1,9,10,3,2,3,11,0,99,30,40,50]
 
-for position, value in enumerate(input):
-        if value != 99:
-            if value == 1:
-                number_at_pos_1 = input[input[position + 1]]
-                number_at_pos_2 = input[input[position + 2]]
-                input[position + 3] = number_at_pos_1 + number_at_pos_2
-            elif value == 2:
-                number_at_pos_1 = input[input[position + 1]]
-                number_at_pos_2 = input[input[position + 2]]
-                input[position + 3] = number_at_pos_1 * number_at_pos_2
+# for position, value in enumerate(input):
+#     if value != 99:
+#         if value == 1:
+#             number_at_pos_1 = input[input[position + 1]]
+#             number_at_pos_2 = input[input[position + 2]]
+#             input[position + 3] = number_at_pos_1 + number_at_pos_2
+#         elif value == 2:
+#             number_at_pos_1 = input[input[position + 1]]
+#             number_at_pos_2 = input[input[position + 2]]
+#             input[position + 3] = number_at_pos_1 * number_at_pos_2
+
+# Trying again
+position = 0
+while position <= len(input):
+    value = input[position]
+    if value == 1:
+        number_at_pos_1 = input[input[position + 1]]
+        number_at_pos_2 = input[input[position + 2]]
+        input[position + 3] = number_at_pos_1 + number_at_pos_2
+        position += 4
+    elif value == 2:
+        number_at_pos_1 = input[input[position + 1]]
+        number_at_pos_2 = input[input[position + 2]]
+        input[position + 3] = number_at_pos_1 * number_at_pos_2
+        position += 4
+    elif value == 99:
+        value = input[0]
+        break
 
 print(input)
+
+
+# 4576384 - Correct answer
